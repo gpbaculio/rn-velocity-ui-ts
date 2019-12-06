@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, ReactNode } from "react";
 import { StyleSheet, TextStyle, ViewStyle } from "react-native";
 
 import Block from "./Block";
 import * as theme from "../constants/theme";
 
 interface BadgeProps {
-  children?: JSX.Element[];
-  style: { [key: string]: string[] | number[] | string | number };
+  children?: JSX.Element[] | ReactNode;
+  style?: { [key: string]: string[] | number[] | string | number };
   size: number;
   color: string;
 }
@@ -42,7 +42,7 @@ const Badge: React.FC<BadgeProps> = ({
   );
 };
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   badge: {
     height: theme.sizes.base,
     width: theme.sizes.base,

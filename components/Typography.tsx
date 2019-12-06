@@ -85,7 +85,7 @@ const Typography: React.FC<TypographyProps> = ({
   );
 };
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   // default style
   text: {
     fontFamily: "Rubik-Regular",

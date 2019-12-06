@@ -1,15 +1,20 @@
 import React from "react";
-import { View, Text, Image, ScrollView, StyleSheet } from "react-native";
+import { Text, Image, ScrollView, StyleSheet, View } from "react-native";
 import { NavigationStackScreenComponent } from "react-navigation-stack";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { LinearGradient } from "expo";
+import { LinearGradient } from "expo-linear-gradient";
+import rgba from "hex-to-rgba";
 
 import Block from "../../components/Block";
+
+import { styles as blockStyles } from "../../components/Block";
+import { styles as cardStyles } from "../../components/Card";
 
 import * as theme from "../../constants/theme";
 import Badge from "../../components/Badge";
 import Card from "../../components/Card";
 import Typography from "../../components/Typography";
+import { FontAwesome } from "@expo/vector-icons";
 
 type Params = {};
 
@@ -38,6 +43,10 @@ const styles = StyleSheet.create({
   vLine: {
     marginVertical: theme.sizes.base / 2,
     width: 1
+  },
+  awards: {
+    padding: theme.sizes.base,
+    marginBottom: theme.sizes.padding
   }
 });
 
@@ -102,11 +111,36 @@ const Welcome: NavigationStackScreenComponent<Params, ScreenProps> = ({
       </Card>
     </TouchableOpacity>
   );
-
+  const renderAwards = () => {
+    return (
+      <LinearGradient
+        end={{ x: 1, y: 0 }}
+        style={[blockStyles.row, cardStyles.card, styles.awards]}
+        colors={["#FF988A", theme.colors.accent]}
+      >
+        <Block middle flex={0.4}>
+          <Badge color={rgba(theme.colors.white, "0.2")} size={74}>
+            <Badge color={rgba(theme.colors.white, "0.2")} size={52}>
+              <FontAwesome name="trophy" color="white" size={theme.sizes.h2} />
+            </Badge>
+          </Badge>
+        </Block>
+        <Block middle>
+          <Typography size={theme.sizes.base} spacing={0.4} medium white>
+            Wohoo!
+          </Typography>
+          <Typography size={theme.sizes.base} spacing={0.4} medium white>
+            Safe Driver Trophy!
+          </Typography>
+        </Block>
+      </LinearGradient>
+    );
+  };
   return (
     <>
       <ScrollView style={styles.welcome} showsVerticalScrollIndicator={false}>
         {renderMonthly()}
+        {renderAwards()}
       </ScrollView>
     </>
   );
