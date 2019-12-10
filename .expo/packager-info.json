@@ -1,9 +1,9 @@
 {
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 13816,
-  "expoServerNgrokUrl": "https://m7-mh3.anonymous.rnasd.exp.direct",
-  "packagerNgrokUrl": "https://packager.m7-mh3.anonymous.rnasd.exp.direct",
-  "ngrokPid": 9724,
+  "packagerPid": 12176,
+  "expoServerNgrokUrl": "https://3i-f2b.anonymous.rnasd.exp.direct",
+  "packagerNgrokUrl": "https://packager.3i-f2b.anonymous.rnasd.exp.direct",
+  "ngrokPid": 18312,
   "devToolsPort": 19002
 }

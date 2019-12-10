@@ -5,7 +5,7 @@ import Block from "./Block";
 import * as theme from "../constants/theme";
 
 interface CardProps {
-  style: { [key: string]: string[] | number[] | string | number };
+  style?: { [key: string]: string[] | number[] | string | number };
   color?: string;
   children: ReactNode;
   shadow?: boolean;
